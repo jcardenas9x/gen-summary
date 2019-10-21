@@ -14,6 +14,10 @@ class MdastParser {
     this.cwd = process.cwd();
   }
 
+  verifyFolder (directory) {
+    return fs.lstatSync(directory).isDirectory();
+  }
+
   grabFilename (arg, isAbs = false) {
     if (isAbs) {
       if (path.isAbsolute(arg)) 

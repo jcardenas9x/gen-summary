@@ -23,7 +23,11 @@ program
       let sourceParser = null;
 
       if (sourceFolder !== "") {
-        sourceParser = new MdastParser(src);
+        if (!Parser.verifyFolder(sourceFolder)) {
+          console.log('[' + chalk.red('X') + '] '+sourceFolder+' is not a valid directory!');
+          return
+        }
+        sourceParser = new MdastParser(sourceFolder);
       }
 
       const filename = (sourceParser) ? sourceParser.grabFilename(path, isAbs) :

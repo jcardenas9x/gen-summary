@@ -24,7 +24,12 @@ _commander.default.command('verify <path> [src]').description('Verify that the f
     let sourceParser = null;
 
     if (sourceFolder !== "") {
-      sourceParser = new _parser.default(src);
+      if (!Parser.verifyFolder(sourceFolder)) {
+        console.log('[' + _chalk.default.red('X') + '] ' + sourceFolder + ' is not a valid directory!');
+        return;
+      }
+
+      sourceParser = new _parser.default(sourceFolder);
     }
 
     const filename = sourceParser ? sourceParser.grabFilename(path, isAbs) : Parser.grabFilename(path, isAbs);

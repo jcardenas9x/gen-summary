@@ -23,6 +23,10 @@ class MdastParser {
     this.cwd = process.cwd();
   }
 
+  verifyFolder(directory) {
+    return _fsExtra.default.lstatSync(directory).isDirectory();
+  }
+
   grabFilename(arg) {
     let isAbs = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
