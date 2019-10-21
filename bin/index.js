@@ -5,9 +5,9 @@ require("core-js/modules/es.symbol.description");
 
 var _commander = _interopRequireDefault(require("commander"));
 
-var _chalk = _interopRequireDefault(require("chalk"));
-
 var _package = _interopRequireDefault(require("../package.json"));
+
+var _textCliHelper = _interopRequireDefault(require("./text-cli-helper"));
 
 var _parser = _interopRequireDefault(require("./parser"));
 
@@ -25,7 +25,8 @@ _commander.default.command('verify <path> [src]').description('Verify that the f
 
     if (sourceFolder !== "") {
       if (!Parser.verifyFolder(sourceFolder)) {
-        console.log('[' + _chalk.default.red('X') + '] ' + sourceFolder + ' is not a valid directory!');
+        _textCliHelper.default.folderInvalid(sourceFolder);
+
         return;
       }
 
@@ -36,20 +37,17 @@ _commander.default.command('verify <path> [src]').description('Verify that the f
     const file = Parser.readMarkdownFile(filename);
 
     if (Parser.analyzeMdast(file)) {
-      console.log('[' + _chalk.default.green('✔') + '] Markdown file is valid!');
+      _textCliHelper.default.mdIsValid();
     } else {
-      console.log('[' + _chalk.default.red('X') + '] Markdown file is not valid');
+      _textCliHelper.default.mdIsInvalid();
     }
   } catch (ex) {
     console.log(ex);
-    console.log('[' + _chalk.default.red('X') + '] Markdown file is not valid');
+
+    _textCliHelper.default.mdIsInvalid();
   }
 }).on('--help', () => {
-  console.log('');
-  console.log('Examples: ');
-  console.log('  $ gensum verify summary.md /Users/jonathan.cardenas/gen-summary/sample');
-  console.log('  $ gensum verify -a /Users/jonathan.cardenas/gen-summary/sample/summary.md');
-  console.log('');
+  _textCliHelper.default.verifyHelpText();
 });
 
 _commander.default.parse(process.argv);

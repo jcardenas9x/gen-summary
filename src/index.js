@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 import program from 'commander';
-import chalk from 'chalk';
 
 import pkg from '../package.json';
+import Text from './text-cli-helper';
 import MdastParser from './parser';
 
 const Parser = new MdastParser(process.cwd());
@@ -23,7 +23,7 @@ program
 
       if (sourceFolder !== "") {
         if (!Parser.verifyFolder(sourceFolder)) {
-          console.log('[' + chalk.red('X') + '] '+sourceFolder+' is not a valid directory!');
+          Text.folderInvalid(sourceFolder);
           return
         }
         sourceParser = new MdastParser(sourceFolder);
@@ -34,20 +34,16 @@ program
       const file = Parser.readMarkdownFile(filename);
 
       if (Parser.analyzeMdast(file)) {
-        console.log('[' + chalk.green('✔') + '] Markdown file is valid!');
+        Text.mdIsValid();
       } else {
-        console.log('[' + chalk.red('X') + '] Markdown file is not valid');
+        Text.mdIsInvalid();
       }
     } catch (ex) {
       console.log(ex);
-      console.log('[' + chalk.red('X') + '] Markdown file is not valid');
+      Text.mdIsInvalid();
     }
   }).on('--help', () => {
-    console.log('');
-    console.log('Examples: ');
-    console.log('  $ gensum verify summary.md /Users/jonathan.cardenas/gen-summary/sample');
-    console.log('  $ gensum verify -a /Users/jonathan.cardenas/gen-summary/sample/summary.md');
-    console.log('');
+    Text.verifyHelpText();
   })
 
 program.parse(process.argv)
