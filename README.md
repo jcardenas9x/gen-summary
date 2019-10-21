@@ -39,9 +39,9 @@ Command line utility that can be called to parse a specific Markdown file into a
 
 This repository comes with a `sample` folder in the root directory of this repository containing two identical Markdown files aside from their filenames. The tool will not work if you use `sample.md`, since it should only work with files named `SUMMARY.md` or `summary.md`. You can use those files to mess around with development.
 
-Commands:
+### Commands
 
-### Verify Markdown File
+#### Verify Markdown File
 
 ```bash
 gensum verify [options] <path> [src]   
@@ -53,5 +53,5 @@ Available Options:
 
 Available Arguments:
 
-* `<path>` - Required argument. The filepath of the Markdown file
-* `[src]` - Optional argument. If specified, the Markdown file's path will become relative to the directory specified in this folder.
+* `<path>` - Required argument. The filepath of the Markdown file. 
+* `[src]` - Optional argument. If specified, the Markdown file's path will become relative to the directory specified in this folder. **If not specified, gensum will use the current working directory**.

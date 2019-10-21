@@ -20,7 +20,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 class MdastParser {
   constructor(directory) {
     this.directory = directory;
-    this.cwd = process.cwd();
   }
 
   verifyFolder(directory) {

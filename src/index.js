@@ -6,8 +6,7 @@ import chalk from 'chalk';
 import pkg from '../package.json';
 import MdastParser from './parser';
 
-const Parser = new MdastParser(__dirname);
-//const root = path.resolve(__dirname, "../sample/summary.md");
+const Parser = new MdastParser(process.cwd());
 
 program
   .version(pkg.version, '-v, --version', 'Output the current version');

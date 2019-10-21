@@ -9,7 +9,7 @@ var _chalk = _interopRequireDefault(require("chalk"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const error = _chalk.default.bold.red;
+const errorText = _chalk.default.bold.red;
 
 class ParserError extends Error {
   constructor(message) {
@@ -22,7 +22,7 @@ class ParserError extends Error {
 
 class ProblematicFileError extends ParserError {
   constructor(file, issue) {
-    super(error("File ".concat(file, " has the following problem: ").concat(issue)));
+    super(errorText("File ".concat(file, " has the following problem: ").concat(issue)));
     this.data = {
       file,
       issue
@@ -35,7 +35,7 @@ exports.ProblematicFileError = ProblematicFileError;
 
 class MarkdownASTError extends ParserError {
   constructor(node, issue, rawAstNode) {
-    super(error("The following issue was found in ".concat(node, ": ").concat(issue)));
+    super(errorText("The following issue was found in ".concat(node, ": ").concat(issue)));
     this.data = {
       rawAstNode,
       issue
@@ -48,7 +48,7 @@ exports.MarkdownASTError = MarkdownASTError;
 
 class InternalError extends ParserError {
   constructor(error) {
-    super(error(error.message));
+    super(errorText("".concat(error.message)));
     this.data = {
       error
     };

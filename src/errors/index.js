@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 
-const error = chalk.bold.red;
+const errorText = chalk.bold.red;
 
 class ParserError extends Error {
   constructor(message) {
@@ -12,21 +12,21 @@ class ParserError extends Error {
 
 class ProblematicFileError extends ParserError {
   constructor(file, issue) {
-    super(error(`File ${file} has the following problem: ${issue}`));
+    super(errorText(`File ${file} has the following problem: ${issue}`));
     this.data = { file, issue };
   }
 }
 
 class MarkdownASTError extends ParserError {
   constructor(node, issue, rawAstNode) {
-    super(error(`The following issue was found in ${node}: ${issue}`));
+    super(errorText(`The following issue was found in ${node}: ${issue}`));
     this.data = { rawAstNode, issue };
   }
 }
 
 class InternalError extends ParserError {
   constructor(error) {
-    super(error(error.message));
+    super(errorText(`${error.message}`));
     this.data = { error };
   }
 }

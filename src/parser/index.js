@@ -11,7 +11,6 @@ class MdastParser {
 
   constructor (directory) { 
     this.directory = directory;
-    this.cwd = process.cwd();
   }
 
   verifyFolder (directory) {

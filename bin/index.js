@@ -13,7 +13,7 @@ var _parser = _interopRequireDefault(require("./parser"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const Parser = new _parser.default(__dirname); //const root = path.resolve(__dirname, "../sample/summary.md");
+const Parser = new _parser.default(process.cwd());
 
 _commander.default.version(_package.default.version, '-v, --version', 'Output the current version');
 
