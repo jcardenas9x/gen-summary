@@ -46,4 +46,9 @@ program
     Text.verifyHelpText();
   })
 
+program.on('command:*', function () {
+  Text.invalidCommandResponse(program.args.join(' '));
+  process.exit(1);
+});
+
 program.parse(process.argv)

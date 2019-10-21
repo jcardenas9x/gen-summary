@@ -50,4 +50,10 @@ _commander.default.command('verify <path> [src]').description('Verify that the f
   _textCliHelper.default.verifyHelpText();
 });
 
+_commander.default.on('command:*', function () {
+  _textCliHelper.default.invalidCommandResponse(_commander.default.args.join(' '));
+
+  process.exit(1);
+});
+
 _commander.default.parse(process.argv);

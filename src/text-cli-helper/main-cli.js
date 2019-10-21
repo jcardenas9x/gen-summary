@@ -12,3 +12,10 @@ export const folderInvalid = (sourceFolder) =>
   console.log('[' + chalk.red('X') + '] '+sourceFolder+' is not a valid directory!');
 export const mdIsValid = () => console.log('[' + chalk.green('✔') + '] Markdown file is valid!');
 export const mdIsInvalid = () => console.log('[' + chalk.red('X') + '] Markdown file is not valid');
+
+export const invalidCommandResponse = (args) => {
+  console.error(
+    chalk.red.bold('Invalid command: %s\nSee --help for a list of available commands.'),
+    args
+  );
+}

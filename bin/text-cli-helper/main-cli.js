@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.mdIsInvalid = exports.mdIsValid = exports.folderInvalid = exports.verifyHelpText = void 0;
+exports.invalidCommandResponse = exports.mdIsInvalid = exports.mdIsValid = exports.folderInvalid = exports.verifyHelpText = void 0;
 
 var _chalk = _interopRequireDefault(require("chalk"));
 
@@ -30,3 +30,9 @@ exports.mdIsValid = mdIsValid;
 const mdIsInvalid = () => console.log('[' + _chalk.default.red('X') + '] Markdown file is not valid');
 
 exports.mdIsInvalid = mdIsInvalid;
+
+const invalidCommandResponse = args => {
+  console.error(_chalk.default.red.bold('Invalid command: %s\nSee --help for a list of available commands.'), args);
+};
+
+exports.invalidCommandResponse = invalidCommandResponse;
