@@ -39,11 +39,13 @@ const deconstructMDAST = mdast => {
     children
   } = mdast;
   let data = {
-    depthLevelZeroLinks: 0
+    depthLevelZeroLinks: 0,
+    actualList: []
   };
 
   if (children[0].children.length > 0) {
     data.depthLevelZeroLinks = children[0].children.length;
+    data.actualList = children[0].children.slice(0);
     return data;
   } else {
     return data;

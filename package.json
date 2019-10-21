@@ -9,7 +9,7 @@
     "build": "npm run compile && npm link"
   },
   "bin": {
-    "gen-summary": "./bin/index.js"
+    "gensum": "./bin/index.js"
   },
   "author": "Jonathan Cardenas (jcardenas9x)",
   "repository": {
@@ -19,11 +19,12 @@
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
+    "chalk": "^2.4.2",
     "commander": "^3.0.2",
     "core-js": "^3.3.2",
     "fs-extra": "^8.1.0",
-    "unified": "^8.4.1",
-    "remark-parse": "^7.0.1"
+    "remark-parse": "^7.0.1",
+    "unified": "^8.4.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",

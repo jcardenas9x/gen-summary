@@ -1,3 +1,7 @@
+import chalk from 'chalk';
+
+const error = chalk.bold.red;
+
 class ParserError extends Error {
   constructor(message) {
     super(message);
@@ -8,21 +12,21 @@ class ParserError extends Error {
 
 class ProblematicFileError extends ParserError {
   constructor(file, issue) {
-    super(`File ${file} has the following problem: ${issue}`);
+    super(error(`File ${file} has the following problem: ${issue}`));
     this.data = { file, issue };
   }
 }
 
 class MarkdownASTError extends ParserError {
   constructor(node, issue, rawAstNode) {
-    super(`The following issue was found in ${node}: ${issue}`);
+    super(error(`The following issue was found in ${node}: ${issue}`));
     this.data = { rawAstNode, issue };
   }
 }
 
 class InternalError extends ParserError {
   constructor(error) {
-    super(error.message);
+    super(error(error.message));
     this.data = { error };
   }
 }
