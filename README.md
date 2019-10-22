@@ -41,7 +41,10 @@ This repository comes with a `sample` folder in the root directory of this repos
 
 ### Commands
 
-#### Verify Markdown File
+* [`verify`](#verify-verify-markdown-file)
+* [`generate`](#generate-generate-summaryjson-or-summary-dictionary)
+
+#### `verify` - Verify Markdown File
 
 ```bash
 gensum verify [options] <path> [src]   
@@ -56,7 +59,7 @@ Available Arguments:
 * `<path>` - Required argument. The filepath of the Markdown file. 
 * `[src]` - Optional argument. If specified, the Markdown file's path will become relative to the directory specified in this folder. **If not specified, gensum will use the current working directory**.
 
-#### Generate SUMMARY.json or SUMMARY dictionary
+#### `generate` - Generate SUMMARY.json or SUMMARY dictionary
 
 **PS:** Not fully functional right now.
 
