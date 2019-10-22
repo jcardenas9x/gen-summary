@@ -41,8 +41,8 @@ This repository comes with a `sample` folder in the root directory of this repos
 
 ### Commands
 
-* [`verify`](#verify-verify-markdown-file)
-* [`generate`](#generate-generate-summaryjson-or-summary-dictionary)
+* [`verify`](#verify---verify-markdown-file)
+* [`generate`](#generate---generate-summaryjson-or-summary-dictionary)
 
 #### `verify` - Verify Markdown File
 
@@ -61,7 +61,7 @@ Available Arguments:
 
 #### `generate` - Generate SUMMARY.json or SUMMARY dictionary
 
-**PS:** Not fully functional right now.
+**PS:** Not fully functional right now. The resulting `SUMMARY.json` file is not fully correct.
 
 ```bash
 gensum generate [options] <path> [src]

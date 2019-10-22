@@ -1,0 +1,303 @@
+{
+  "array": [
+    {
+      "title": "Browse",
+      "link": ""
+    },
+    {
+      "title": "Related Pages",
+      "link": "/pages.md",
+      "sub": [
+        {
+          "title": "Eosio.msig",
+          "link": "/md_contracts_eosio_8msig__r_e_a_d_m_e.md"
+        },
+        {
+          "title": "Eosio.system",
+          "link": "/md_contracts_eosio_8system__r_e_a_d_m_e.md"
+        },
+        {
+          "title": "Eosio.token",
+          "link": "/md_contracts_eosio_8token__r_e_a_d_m_e.md"
+        },
+        {
+          "title": "Eosio.wrap",
+          "link": "/md_contracts_eosio_8wrap__r_e_a_d_m_e.md"
+        }
+      ]
+    },
+    {
+      "title": "Class Index",
+      "link": "/classes.md"
+    },
+    {
+      "title": "Function Index",
+      "link": "/functions.md"
+    },
+    {
+      "title": "Variable Index",
+      "link": "/variables.md"
+    },
+    {
+      "title": "Enumeration Index",
+      "link": "/enumerations.md"
+    },
+    {
+      "title": "Class List",
+      "link": "/annotated.md",
+      "sub": [
+        {
+          "title": "struct authority",
+          "link": "/structeosio_1_1authority.md"
+        },
+        {
+          "title": "struct abi_hash",
+          "link": "/structeosio_1_1bios_1_1abi__hash.md"
+        },
+        {
+          "title": "struct block_header",
+          "link": "/structeosio_1_1block__header.md"
+        },
+        {
+          "title": "struct key_weight",
+          "link": "/structeosio_1_1key__weight.md"
+        },
+        {
+          "title": "struct approval",
+          "link": "/structeosio_1_1multisig_1_1approval.md"
+        },
+        {
+          "title": "struct approvals_info",
+          "link": "/structeosio_1_1multisig_1_1approvals__info.md"
+        },
+        {
+          "title": "struct invalidation",
+          "link": "/structeosio_1_1multisig_1_1invalidation.md"
+        },
+        {
+          "title": "struct old_approvals_info",
+          "link": "/structeosio_1_1multisig_1_1old__approvals__info.md"
+        },
+        {
+          "title": "struct proposal",
+          "link": "/structeosio_1_1multisig_1_1proposal.md"
+        },
+        {
+          "title": "struct permission_level_weight",
+          "link": "/structeosio_1_1permission__level__weight.md"
+        },
+        {
+          "title": "struct account",
+          "link": "/structeosio_1_1token_1_1account.md"
+        },
+        {
+          "title": "struct currency_stats",
+          "link": "/structeosio_1_1token_1_1currency__stats.md"
+        },
+        {
+          "title": "struct wait_weight",
+          "link": "/structeosio_1_1wait__weight.md"
+        },
+        {
+          "title": "class wrap",
+          "link": "/classeosio_1_1wrap.md"
+        },
+        {
+          "title": "struct abi_hash",
+          "link": "/structeosiosystem_1_1abi__hash.md"
+        },
+        {
+          "title": "struct authority",
+          "link": "/structeosiosystem_1_1authority.md"
+        },
+        {
+          "title": "struct bid_refund",
+          "link": "/structeosiosystem_1_1bid__refund.md"
+        },
+        {
+          "title": "struct block_header",
+          "link": "/structeosiosystem_1_1block__header.md"
+        },
+        {
+          "title": "struct delegated_bandwidth",
+          "link": "/structeosiosystem_1_1delegated__bandwidth.md"
+        },
+        {
+          "title": "struct eosio_global_state",
+          "link": "/structeosiosystem_1_1eosio__global__state.md"
+        },
+        {
+          "title": "struct eosio_global_state2",
+          "link": "/structeosiosystem_1_1eosio__global__state2.md"
+        },
+        {
+          "title": "struct eosio_global_state3",
+          "link": "/structeosiosystem_1_1eosio__global__state3.md"
+        },
+        {
+          "title": "struct connector",
+          "link": "/structeosiosystem_1_1exchange__state_1_1connector.md"
+        },
+        {
+          "title": "struct key_weight",
+          "link": "/structeosiosystem_1_1key__weight.md"
+        },
+        {
+          "title": "struct name_bid",
+          "link": "/structeosiosystem_1_1name__bid.md"
+        },
+        {
+          "title": "class native",
+          "link": "/classeosiosystem_1_1native.md"
+        },
+        {
+          "title": "struct permission_level_weight",
+          "link": "/structeosiosystem_1_1permission__level__weight.md"
+        },
+        {
+          "title": "struct producer_info",
+          "link": "/structeosiosystem_1_1producer__info.md"
+        },
+        {
+          "title": "struct producer_info2",
+          "link": "/structeosiosystem_1_1producer__info2.md"
+        },
+        {
+          "title": "struct refund_request",
+          "link": "/structeosiosystem_1_1refund__request.md"
+        },
+        {
+          "title": "struct rex_balance",
+          "link": "/structeosiosystem_1_1rex__balance.md"
+        },
+        {
+          "title": "struct rex_fund",
+          "link": "/structeosiosystem_1_1rex__fund.md"
+        },
+        {
+          "title": "struct rex_loan",
+          "link": "/structeosiosystem_1_1rex__loan.md"
+        },
+        {
+          "title": "struct rex_order",
+          "link": "/structeosiosystem_1_1rex__order.md"
+        },
+        {
+          "title": "struct rex_order_outcome",
+          "link": "/structeosiosystem_1_1rex__order__outcome.md"
+        },
+        {
+          "title": "struct rex_pool",
+          "link": "/structeosiosystem_1_1rex__pool.md"
+        },
+        {
+          "title": "struct for_each",
+          "link": "/structeosiosystem_1_1system__contract_1_1registration_1_1for__each.md"
+        },
+        {
+          "title": "struct for_each< P >",
+          "link": "/structeosiosystem_1_1system__contract_1_1registration_1_1for__each_3_01_p_01_4.md"
+        },
+        {
+          "title": "struct user_resources",
+          "link": "/structeosiosystem_1_1user__resources.md"
+        },
+        {
+          "title": "struct voter_info",
+          "link": "/structeosiosystem_1_1voter__info.md"
+        },
+        {
+          "title": "struct wait_weight",
+          "link": "/structeosiosystem_1_1wait__weight.md"
+        },
+        {
+          "title": "class rex_results",
+          "link": "/classrex__results.md"
+        }
+      ]
+    },
+    {
+      "title": "Files",
+      "link": "/files.md",
+      "sub": [
+        {
+          "title": "eosio.bios.hpp",
+          "link": "/eosio_8bios_8hpp.md"
+        },
+        {
+          "title": "eosio.bios.cpp",
+          "link": "/eosio_8bios_8cpp.md"
+        },
+        {
+          "title": "eosio.msig.hpp",
+          "link": "/eosio_8msig_8hpp.md"
+        },
+        {
+          "title": "eosio.msig.cpp",
+          "link": "/eosio_8msig_8cpp.md"
+        },
+        {
+          "title": "eosio.system.hpp",
+          "link": "/eosio_8system_8hpp.md"
+        },
+        {
+          "title": "exchange_state.hpp",
+          "link": "/exchange__state_8hpp.md"
+        },
+        {
+          "title": "native.hpp",
+          "link": "/native_8hpp.md"
+        },
+        {
+          "title": "rex.results.hpp",
+          "link": "/rex_8results_8hpp.md"
+        },
+        {
+          "title": "delegate_bandwidth.cpp",
+          "link": "/delegate__bandwidth_8cpp.md"
+        },
+        {
+          "title": "eosio.system.cpp",
+          "link": "/eosio_8system_8cpp.md"
+        },
+        {
+          "title": "exchange_state.cpp",
+          "link": "/exchange__state_8cpp.md"
+        },
+        {
+          "title": "producer_pay.cpp",
+          "link": "/producer__pay_8cpp.md"
+        },
+        {
+          "title": "rex.cpp",
+          "link": "/rex_8cpp.md"
+        },
+        {
+          "title": "rex.results.cpp",
+          "link": "/rex_8results_8cpp.md"
+        },
+        {
+          "title": "voting.cpp",
+          "link": "/voting_8cpp.md"
+        },
+        {
+          "title": "eosio.token.hpp",
+          "link": "/eosio_8token_8hpp.md"
+        },
+        {
+          "title": "eosio.token.cpp",
+          "link": "/eosio_8token_8cpp.md"
+        },
+        {
+          "title": "eosio.wrap.hpp",
+          "link": "/eosio_8wrap_8hpp.md"
+        },
+        {
+          "title": "eosio.wrap.cpp",
+          "link": "/eosio_8wrap_8cpp.md"
+        }
+      ]
+    }
+  ],
+  "title": ""
+}

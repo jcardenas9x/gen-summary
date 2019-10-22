@@ -14,6 +14,7 @@ export const generateHelpText = () => {
   console.log('  $ gensum gen -j summary.md');
   console.log('  $ gensum generate summary.md /Users/jonathan.cardenas/gen-summary/sample');
   console.log('  $ gensum generate -a /Users/jonathan.cardenas/gen-summary/sample/summary.md');
+  console.log('  $ gensum generate -a -j /Users/jonathan.cardenas/gen-summary/sample/summary.md');
   console.log('');
 }
 
@@ -25,6 +26,9 @@ export const noOfParentLinks = (num) => console.log(
 export const mdIsValid = () => console.log('[' + chalk.green('✔') + '] Markdown file is valid!');
 export const mdIsInvalid = () => console.log('[' + chalk.red('X') + '] Markdown file is not valid');
 export const mdFail = () => console.log('[' + chalk.red('X') + '] Markdown parse failed! See stack trace above');
+
+export const parseSuccess = () => console.log('[' + chalk.green('✔') + '] Summary dictionary parsed');
+export const parseOutSuccess = () => console.log('[' + chalk.green('✔') + '] Summary file written to SUMMARY.json');
 
 export const invalidCommandResponse = (args) => {
   console.error(

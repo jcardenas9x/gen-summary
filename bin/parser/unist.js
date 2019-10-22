@@ -84,21 +84,17 @@ const navigate = tree => {
         let item = createSummaryItem(label[0].children[0], subs);
         summary["array"].push(item);
       }
-      /*       console.log(
-              `Current working depthIndex: ${workingIndex} w/ listItem node index ${index} w/ ${node.children.length} children`
-            ); */
 
+      console.log("Current working depthIndex: ".concat(workingIndex, " w/ listItem node index ").concat(index, " w/ ").concat(node.children.length, " children"));
 
       if (!nodesAreSamePosition(parent, rootListNodePosition)) {
         let item = createSummaryItem(label[0].children[0], subs);
 
         if (item.sub) {
           subIndexNodePosition = Object.assign({}, node.position);
-        }
-
-        if (workingIndex === 7) {
           console.log(subIndexNodePosition);
-          console.log(item);
+        } else {
+          summary["array"][workingIndex].sub.push(item);
         }
       }
     }

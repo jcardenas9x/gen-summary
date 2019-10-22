@@ -15,6 +15,8 @@ var _default = {
   mdIsInvalid: _mainCli.mdIsInvalid,
   mdIsValid: _mainCli.mdIsValid,
   invalidCommandResponse: _mainCli.invalidCommandResponse,
-  noOfParentLinks: _mainCli.noOfParentLinks
+  noOfParentLinks: _mainCli.noOfParentLinks,
+  parseOutSuccess: _mainCli.parseOutSuccess,
+  parseSuccess: _mainCli.parseSuccess
 };
 exports.default = _default;

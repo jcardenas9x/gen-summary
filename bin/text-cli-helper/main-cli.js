@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.invalidCommandResponse = exports.mdFail = exports.mdIsInvalid = exports.mdIsValid = exports.noOfParentLinks = exports.folderInvalid = exports.generateHelpText = exports.verifyHelpText = void 0;
+exports.invalidCommandResponse = exports.parseOutSuccess = exports.parseSuccess = exports.mdFail = exports.mdIsInvalid = exports.mdIsValid = exports.noOfParentLinks = exports.folderInvalid = exports.generateHelpText = exports.verifyHelpText = void 0;
 
 var _chalk = _interopRequireDefault(require("chalk"));
 
@@ -49,6 +49,14 @@ exports.mdIsInvalid = mdIsInvalid;
 const mdFail = () => console.log('[' + _chalk.default.red('X') + '] Markdown parse failed! See stack trace above');
 
 exports.mdFail = mdFail;
+
+const parseSuccess = () => console.log('[' + _chalk.default.green('✔') + '] Summary dictionary parsed');
+
+exports.parseSuccess = parseSuccess;
+
+const parseOutSuccess = () => console.log('[' + _chalk.default.green('✔') + '] Summary file written to SUMMARY.json');
+
+exports.parseOutSuccess = parseOutSuccess;
 
 const invalidCommandResponse = args => {
   console.error(_chalk.default.red.bold('Invalid command: %s\nSee --help for a list of available commands.'), args);

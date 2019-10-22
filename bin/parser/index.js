@@ -38,6 +38,10 @@ class MdastParser {
     }
   }
 
+  grabDir(arg) {
+    return _path.default.dirname(arg);
+  }
+
   readMarkdownFile(filename) {
     if ((0, _utils.verifySummaryMD)(filename)) {
       try {
@@ -49,6 +53,18 @@ class MdastParser {
       }
     } else {
       throw new _errors.ProblematicFileError(filename, "Invalid filename, requires SUMMARY.md or summary.md");
+    }
+  }
+
+  writeToSummaryFile(data) {
+    try {
+      let filepath = _path.default.resolve(this.directory, 'SUMMARY.json');
+
+      _fsExtra.default.writeFileSync(filepath, data);
+
+      return 1;
+    } catch (ex) {
+      throw new _errors.InternalError(ex);
     }
   }
 

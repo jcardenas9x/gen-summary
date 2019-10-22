@@ -1,6 +1,7 @@
 import {
   verifyHelpText, generateHelpText, mdIsInvalid, mdIsValid, mdFail, 
-  folderInvalid, invalidCommandResponse, noOfParentLinks
+  folderInvalid, invalidCommandResponse, noOfParentLinks,
+  parseSuccess, parseOutSuccess
 } from './main-cli';
 
 export default {
@@ -11,5 +12,7 @@ export default {
   mdIsInvalid,
   mdIsValid,
   invalidCommandResponse,
-  noOfParentLinks
+  noOfParentLinks,
+  parseOutSuccess,
+  parseSuccess
 }
