@@ -5,6 +5,7 @@ import { ProblematicFileError, MarkdownASTError, InternalError } from '../errors
 import {
   deconstructMDAST, verifySummaryMDAST, verifySummaryMD
 } from './utils';
+import { navigate } from './unist';
 import returnMDAST from '../mdast';
 
 class MdastParser {
@@ -55,6 +56,10 @@ class MdastParser {
     } else {
       throw new MarkdownASTError("root node", "This MDAST is not a valid list", mdast) 
     }
+  }
+
+  parseMdast (mdast) {
+    return navigate(mdast);
   }
 
 }

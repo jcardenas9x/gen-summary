@@ -12,7 +12,9 @@ var _remarkParse = _interopRequireDefault(require("remark-parse"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const returnMDAST = file => {
-  return (0, _unified.default)().use(_remarkParse.default).parse(file);
+  return (0, _unified.default)().use(_remarkParse.default, {
+    commonmark: true
+  }).parse(file);
 };
 
 var _default = returnMDAST;

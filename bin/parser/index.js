@@ -13,6 +13,8 @@ var _errors = require("../errors");
 
 var _utils = require("./utils");
 
+var _unist = require("./unist");
+
 var _mdast = _interopRequireDefault(require("../mdast"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -64,6 +66,10 @@ class MdastParser {
     } else {
       throw new _errors.MarkdownASTError("root node", "This MDAST is not a valid list", mdast);
     }
+  }
+
+  parseMdast(mdast) {
+    return (0, _unist.navigate)(mdast);
   }
 
 }

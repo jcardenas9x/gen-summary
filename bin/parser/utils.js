@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.verifySummaryMDAST = exports.verifySummaryMD = exports.deconstructMDAST = exports.parseListItemNode = exports.initializeListItem = exports.initializeSummary = void 0;
+exports.verifySummaryMDAST = exports.verifySummaryMD = exports.deconstructMDAST = void 0;
 
 var _constants = require("../constants");
 
@@ -16,39 +16,28 @@ const {
   LIST_TYPE
 } = _constants.CONSTANTS;
 
-const initializeSummary = () => Object.assign({}, {
-  "array": [],
-  "title": ""
-});
-
-exports.initializeSummary = initializeSummary;
-
-const initializeListItem = () => Object.assign({}, {
-  "title": "",
-  "link": ""
-});
-
-exports.initializeListItem = initializeListItem;
-
-const parseListItemNode = node => {};
-
-exports.parseListItemNode = parseListItemNode;
-
 const deconstructMDAST = mdast => {
   const {
     children
   } = mdast;
+  const mdastFilterByListType = children.filter(child => child.type === LIST_TYPE);
   let data = {
     depthLevelZeroLinks: 0,
-    actualList: []
+    actualList: [],
+    mdast: {}
   };
 
-  if (children[0].children.length > 0) {
-    data.depthLevelZeroLinks = children[0].children.length;
-    data.actualList = children[0].children.slice(0);
+  if (mdastFilterByListType.length === 0) {
     return data;
   } else {
-    return data;
+    if (mdastFilterByListType[0].children.length > 0) {
+      data.depthLevelZeroLinks = mdastFilterByListType[0].children.length;
+      data.actualList = mdastFilterByListType[0].children.slice(0);
+      data.mdast = mdast;
+      return data;
+    } else {
+      return data;
+    }
   }
 };
 
@@ -58,6 +47,14 @@ const verifySummaryMD = filename => _path.default.basename(filename, '.md') === 
 
 exports.verifySummaryMD = verifySummaryMD;
 
-const verifySummaryMDAST = mdast => mdast.type === ROOT_TYPE && mdast.children.length === 1 && mdast.children[0].type === LIST_TYPE;
+const verifySummaryMDAST = mdast => {
+  const mdastFilterByListType = mdast.children.filter(child => child.type === LIST_TYPE);
+
+  const _isMdastTypeRoot = mdast.type === ROOT_TYPE;
+
+  const _mdastHasListNode = mdastFilterByListType.length > 0;
+
+  return _isMdastTypeRoot && _mdastHasListNode;
+};
 
 exports.verifySummaryMDAST = verifySummaryMDAST;

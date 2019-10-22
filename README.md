@@ -55,3 +55,23 @@ Available Arguments:
 
 * `<path>` - Required argument. The filepath of the Markdown file. 
 * `[src]` - Optional argument. If specified, the Markdown file's path will become relative to the directory specified in this folder. **If not specified, gensum will use the current working directory**.
+
+#### Generate SUMMARY.json or SUMMARY dictionary
+
+**PS:** Not fully functional right now.
+
+```bash
+gensum generate [options] <path> [src]
+```
+
+Alias: `gen`
+
+Available Options:
+
+* `-a --abs` - Ignores `[src]` and assumes `<path>` is an absolute filepath.
+* `-j --outjson` - Outputs the summary dictionary as `SUMMARY.json` instead of just outputting the summary dictionary
+
+Available Arguments:
+
+* `<path>` - Required argument. The filepath of the Markdown file. 
+* `[src]` - Optional argument. If specified, the Markdown file's path will become relative to the directory specified in this folder. **If not specified, gensum will use the current working directory**.

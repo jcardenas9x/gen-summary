@@ -3,7 +3,7 @@ import markdown from 'remark-parse';
 
 const returnMDAST = (file) => {
   return unified()
-    .use(markdown)
+    .use(markdown, { commonmark: true })
     .parse(file)
 };
 

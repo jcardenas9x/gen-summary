@@ -35,8 +35,11 @@ _commander.default.command('verify <path> [src]').description('Verify that the f
 
     const filename = sourceParser ? sourceParser.grabFilename(path, isAbs) : Parser.grabFilename(path, isAbs);
     const file = Parser.readMarkdownFile(filename);
+    const data = Parser.analyzeMdast(file);
 
-    if (Parser.analyzeMdast(file)) {
+    if (data.depthLevelZeroLinks > 0) {
+      _textCliHelper.default.noOfParentLinks(data.depthLevelZeroLinks);
+
       _textCliHelper.default.mdIsValid();
     } else {
       _textCliHelper.default.mdIsInvalid();
@@ -48,6 +51,44 @@ _commander.default.command('verify <path> [src]').description('Verify that the f
   }
 }).on('--help', () => {
   _textCliHelper.default.verifyHelpText();
+});
+
+_commander.default.command('generate <path> [src]').alias('gen').description('Generate the SUMMARY.json file or dictionary').option('-a, --abs', 'if true, the path is absolute. False by default').option('-j, --outjson', 'if true, output a json file named SUMMARY.json. False by default').action((path, src, options) => {
+  try {
+    const isAbs = options.abs || false;
+    const sourceFolder = src || "";
+    let sourceParser = null;
+
+    if (sourceFolder !== "") {
+      if (!Parser.verifyFolder(sourceFolder)) {
+        _textCliHelper.default.folderInvalid(sourceFolder);
+
+        return;
+      }
+
+      sourceParser = new _parser.default(sourceFolder);
+    }
+
+    const filename = sourceParser ? sourceParser.grabFilename(path, isAbs) : Parser.grabFilename(path, isAbs);
+    const file = Parser.readMarkdownFile(filename);
+    const data = Parser.analyzeMdast(file);
+
+    if (data.actualList && data.actualList.length > 0) {
+      const tree = data.mdast;
+      const summary = Parser.parseMdast(tree);
+      console.log(summary);
+    } else {
+      _textCliHelper.default.mdIsInvalid();
+
+      return;
+    }
+  } catch (ex) {
+    console.log(ex);
+
+    _textCliHelper.default.mdFail();
+  }
+}).on('--help', () => {
+  _textCliHelper.default.generateHelpText();
 });
 
 _commander.default.on('command:*', function () {

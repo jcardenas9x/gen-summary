@@ -9,9 +9,12 @@ var _mainCli = require("./main-cli");
 
 var _default = {
   verifyHelpText: _mainCli.verifyHelpText,
+  generateHelpText: _mainCli.generateHelpText,
   folderInvalid: _mainCli.folderInvalid,
+  mdFail: _mainCli.mdFail,
   mdIsInvalid: _mainCli.mdIsInvalid,
   mdIsValid: _mainCli.mdIsValid,
-  invalidCommandResponse: _mainCli.invalidCommandResponse
+  invalidCommandResponse: _mainCli.invalidCommandResponse,
+  noOfParentLinks: _mainCli.noOfParentLinks
 };
 exports.default = _default;
