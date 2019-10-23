@@ -49,206 +49,214 @@
         {
           "title": "namespace eosio",
           "link": "/namespaceeosio.md",
-          "sub": []
-        },
-        {
-          "title": "struct authority",
-          "link": "/structeosio_1_1authority.md"
-        },
-        {
-          "title": "class bios",
-          "link": "/classeosio_1_1bios.md",
-          "sub": []
-        },
-        {
-          "title": "struct abi_hash",
-          "link": "/structeosio_1_1bios_1_1abi__hash.md"
-        },
-        {
-          "title": "struct block_header",
-          "link": "/structeosio_1_1block__header.md"
-        },
-        {
-          "title": "struct key_weight",
-          "link": "/structeosio_1_1key__weight.md"
-        },
-        {
-          "title": "class multisig",
-          "link": "/classeosio_1_1multisig.md",
-          "sub": []
-        },
-        {
-          "title": "struct approval",
-          "link": "/structeosio_1_1multisig_1_1approval.md"
-        },
-        {
-          "title": "struct approvals_info",
-          "link": "/structeosio_1_1multisig_1_1approvals__info.md"
-        },
-        {
-          "title": "struct invalidation",
-          "link": "/structeosio_1_1multisig_1_1invalidation.md"
-        },
-        {
-          "title": "struct old_approvals_info",
-          "link": "/structeosio_1_1multisig_1_1old__approvals__info.md"
-        },
-        {
-          "title": "struct proposal",
-          "link": "/structeosio_1_1multisig_1_1proposal.md"
-        },
-        {
-          "title": "struct permission_level_weight",
-          "link": "/structeosio_1_1permission__level__weight.md"
-        },
-        {
-          "title": "class token",
-          "link": "/classeosio_1_1token.md",
-          "sub": []
-        },
-        {
-          "title": "struct account",
-          "link": "/structeosio_1_1token_1_1account.md"
-        },
-        {
-          "title": "struct currency_stats",
-          "link": "/structeosio_1_1token_1_1currency__stats.md"
-        },
-        {
-          "title": "struct wait_weight",
-          "link": "/structeosio_1_1wait__weight.md"
-        },
-        {
-          "title": "class wrap",
-          "link": "/classeosio_1_1wrap.md"
+          "sub": [
+            {
+              "title": "struct authority",
+              "link": "/structeosio_1_1authority.md"
+            },
+            {
+              "title": "class bios",
+              "link": "/classeosio_1_1bios.md",
+              "sub": [
+                {
+                  "title": "struct abi_hash",
+                  "link": "/structeosio_1_1bios_1_1abi__hash.md"
+                }
+              ]
+            },
+            {
+              "title": "struct block_header",
+              "link": "/structeosio_1_1block__header.md"
+            },
+            {
+              "title": "struct key_weight",
+              "link": "/structeosio_1_1key__weight.md"
+            },
+            {
+              "title": "class multisig",
+              "link": "/classeosio_1_1multisig.md",
+              "sub": [
+                {
+                  "title": "struct approval",
+                  "link": "/structeosio_1_1multisig_1_1approval.md"
+                },
+                {
+                  "title": "struct approvals_info",
+                  "link": "/structeosio_1_1multisig_1_1approvals__info.md"
+                },
+                {
+                  "title": "struct invalidation",
+                  "link": "/structeosio_1_1multisig_1_1invalidation.md"
+                },
+                {
+                  "title": "struct old_approvals_info",
+                  "link": "/structeosio_1_1multisig_1_1old__approvals__info.md"
+                },
+                {
+                  "title": "struct proposal",
+                  "link": "/structeosio_1_1multisig_1_1proposal.md"
+                }
+              ]
+            },
+            {
+              "title": "struct permission_level_weight",
+              "link": "/structeosio_1_1permission__level__weight.md"
+            },
+            {
+              "title": "class token",
+              "link": "/classeosio_1_1token.md",
+              "sub": [
+                {
+                  "title": "struct account",
+                  "link": "/structeosio_1_1token_1_1account.md"
+                },
+                {
+                  "title": "struct currency_stats",
+                  "link": "/structeosio_1_1token_1_1currency__stats.md"
+                }
+              ]
+            },
+            {
+              "title": "struct wait_weight",
+              "link": "/structeosio_1_1wait__weight.md"
+            },
+            {
+              "title": "class wrap",
+              "link": "/classeosio_1_1wrap.md"
+            }
+          ]
         },
         {
           "title": "namespace eosiosystem",
           "link": "/namespaceeosiosystem.md",
-          "sub": []
-        },
-        {
-          "title": "struct abi_hash",
-          "link": "/structeosiosystem_1_1abi__hash.md"
-        },
-        {
-          "title": "struct authority",
-          "link": "/structeosiosystem_1_1authority.md"
-        },
-        {
-          "title": "struct bid_refund",
-          "link": "/structeosiosystem_1_1bid__refund.md"
-        },
-        {
-          "title": "struct block_header",
-          "link": "/structeosiosystem_1_1block__header.md"
-        },
-        {
-          "title": "struct delegated_bandwidth",
-          "link": "/structeosiosystem_1_1delegated__bandwidth.md"
-        },
-        {
-          "title": "struct eosio_global_state",
-          "link": "/structeosiosystem_1_1eosio__global__state.md"
-        },
-        {
-          "title": "struct eosio_global_state2",
-          "link": "/structeosiosystem_1_1eosio__global__state2.md"
-        },
-        {
-          "title": "struct eosio_global_state3",
-          "link": "/structeosiosystem_1_1eosio__global__state3.md"
-        },
-        {
-          "title": "struct exchange_state",
-          "link": "/structeosiosystem_1_1exchange__state.md",
-          "sub": []
-        },
-        {
-          "title": "struct connector",
-          "link": "/structeosiosystem_1_1exchange__state_1_1connector.md"
-        },
-        {
-          "title": "struct key_weight",
-          "link": "/structeosiosystem_1_1key__weight.md"
-        },
-        {
-          "title": "struct name_bid",
-          "link": "/structeosiosystem_1_1name__bid.md"
-        },
-        {
-          "title": "class native",
-          "link": "/classeosiosystem_1_1native.md"
-        },
-        {
-          "title": "struct permission_level_weight",
-          "link": "/structeosiosystem_1_1permission__level__weight.md"
-        },
-        {
-          "title": "struct producer_info",
-          "link": "/structeosiosystem_1_1producer__info.md"
-        },
-        {
-          "title": "struct producer_info2",
-          "link": "/structeosiosystem_1_1producer__info2.md"
-        },
-        {
-          "title": "struct refund_request",
-          "link": "/structeosiosystem_1_1refund__request.md"
-        },
-        {
-          "title": "struct rex_balance",
-          "link": "/structeosiosystem_1_1rex__balance.md"
-        },
-        {
-          "title": "struct rex_fund",
-          "link": "/structeosiosystem_1_1rex__fund.md"
-        },
-        {
-          "title": "struct rex_loan",
-          "link": "/structeosiosystem_1_1rex__loan.md"
-        },
-        {
-          "title": "struct rex_order",
-          "link": "/structeosiosystem_1_1rex__order.md"
-        },
-        {
-          "title": "struct rex_order_outcome",
-          "link": "/structeosiosystem_1_1rex__order__outcome.md"
-        },
-        {
-          "title": "struct rex_pool",
-          "link": "/structeosiosystem_1_1rex__pool.md"
-        },
-        {
-          "title": "class system_contract",
-          "link": "/classeosiosystem_1_1system__contract.md",
-          "sub": []
-        },
-        {
-          "title": "class registration",
-          "link": "/classeosiosystem_1_1system__contract_1_1registration.md",
-          "sub": []
-        },
-        {
-          "title": "struct for_each",
-          "link": "/structeosiosystem_1_1system__contract_1_1registration_1_1for__each.md"
-        },
-        {
-          "title": "struct for_each< P >",
-          "link": "/structeosiosystem_1_1system__contract_1_1registration_1_1for__each_3_01_p_01_4.md"
-        },
-        {
-          "title": "struct user_resources",
-          "link": "/structeosiosystem_1_1user__resources.md"
-        },
-        {
-          "title": "struct voter_info",
-          "link": "/structeosiosystem_1_1voter__info.md"
-        },
-        {
-          "title": "struct wait_weight",
-          "link": "/structeosiosystem_1_1wait__weight.md"
+          "sub": [
+            {
+              "title": "struct abi_hash",
+              "link": "/structeosiosystem_1_1abi__hash.md"
+            },
+            {
+              "title": "struct authority",
+              "link": "/structeosiosystem_1_1authority.md"
+            },
+            {
+              "title": "struct bid_refund",
+              "link": "/structeosiosystem_1_1bid__refund.md"
+            },
+            {
+              "title": "struct block_header",
+              "link": "/structeosiosystem_1_1block__header.md"
+            },
+            {
+              "title": "struct delegated_bandwidth",
+              "link": "/structeosiosystem_1_1delegated__bandwidth.md"
+            },
+            {
+              "title": "struct eosio_global_state",
+              "link": "/structeosiosystem_1_1eosio__global__state.md"
+            },
+            {
+              "title": "struct eosio_global_state2",
+              "link": "/structeosiosystem_1_1eosio__global__state2.md"
+            },
+            {
+              "title": "struct eosio_global_state3",
+              "link": "/structeosiosystem_1_1eosio__global__state3.md"
+            },
+            {
+              "title": "struct exchange_state",
+              "link": "/structeosiosystem_1_1exchange__state.md",
+              "sub": [
+                {
+                  "title": "struct connector",
+                  "link": "/structeosiosystem_1_1exchange__state_1_1connector.md"
+                }
+              ]
+            },
+            {
+              "title": "struct key_weight",
+              "link": "/structeosiosystem_1_1key__weight.md"
+            },
+            {
+              "title": "struct name_bid",
+              "link": "/structeosiosystem_1_1name__bid.md"
+            },
+            {
+              "title": "class native",
+              "link": "/classeosiosystem_1_1native.md"
+            },
+            {
+              "title": "struct permission_level_weight",
+              "link": "/structeosiosystem_1_1permission__level__weight.md"
+            },
+            {
+              "title": "struct producer_info",
+              "link": "/structeosiosystem_1_1producer__info.md"
+            },
+            {
+              "title": "struct producer_info2",
+              "link": "/structeosiosystem_1_1producer__info2.md"
+            },
+            {
+              "title": "struct refund_request",
+              "link": "/structeosiosystem_1_1refund__request.md"
+            },
+            {
+              "title": "struct rex_balance",
+              "link": "/structeosiosystem_1_1rex__balance.md"
+            },
+            {
+              "title": "struct rex_fund",
+              "link": "/structeosiosystem_1_1rex__fund.md"
+            },
+            {
+              "title": "struct rex_loan",
+              "link": "/structeosiosystem_1_1rex__loan.md"
+            },
+            {
+              "title": "struct rex_order",
+              "link": "/structeosiosystem_1_1rex__order.md"
+            },
+            {
+              "title": "struct rex_order_outcome",
+              "link": "/structeosiosystem_1_1rex__order__outcome.md"
+            },
+            {
+              "title": "struct rex_pool",
+              "link": "/structeosiosystem_1_1rex__pool.md"
+            },
+            {
+              "title": "class system_contract",
+              "link": "/classeosiosystem_1_1system__contract.md",
+              "sub": [
+                {
+                  "title": "class registration",
+                  "link": "/classeosiosystem_1_1system__contract_1_1registration.md",
+                  "sub": [
+                    {
+                      "title": "struct for_each",
+                      "link": "/structeosiosystem_1_1system__contract_1_1registration_1_1for__each.md"
+                    },
+                    {
+                      "title": "struct for_each< P >",
+                      "link": "/structeosiosystem_1_1system__contract_1_1registration_1_1for__each_3_01_p_01_4.md"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "struct user_resources",
+              "link": "/structeosiosystem_1_1user__resources.md"
+            },
+            {
+              "title": "struct voter_info",
+              "link": "/structeosiosystem_1_1voter__info.md"
+            },
+            {
+              "title": "struct wait_weight",
+              "link": "/structeosiosystem_1_1wait__weight.md"
+            }
+          ]
         },
         {
           "title": "class rex_results",
@@ -263,183 +271,204 @@
         {
           "title": "contracts/",
           "link": "/dir_ae9b15dd87e066e1908bbd90e8f38627.md",
-          "sub": []
-        },
-        {
-          "title": "eosio.bios/",
-          "link": "/dir_e76b55871a3ceedcbe1f9359e5753575.md",
-          "sub": []
-        },
-        {
-          "title": "include/",
-          "link": "/dir_d3b48ed0b02c3a9d5a9cfb905f050749.md",
-          "sub": []
-        },
-        {
-          "title": "eosio.bios/",
-          "link": "/dir_b6a109972e8c62914608cd362cb26735.md",
-          "sub": []
-        },
-        {
-          "title": "eosio.bios.hpp",
-          "link": "/eosio_8bios_8hpp.md"
-        },
-        {
-          "title": "src/",
-          "link": "/dir_9c07e9615a62ba2630f38c049fd00b2f.md",
-          "sub": []
-        },
-        {
-          "title": "eosio.bios.cpp",
-          "link": "/eosio_8bios_8cpp.md"
-        },
-        {
-          "title": "eosio.msig/",
-          "link": "/dir_67cc96a10ad9fb5764f9d7b1a4bddccd.md",
-          "sub": []
-        },
-        {
-          "title": "include/",
-          "link": "/dir_b9b8d5c43496e6cb995f91e4d51bbf8e.md",
-          "sub": []
-        },
-        {
-          "title": "eosio.msig/",
-          "link": "/dir_488b55ee394912b442d60ddf6ba9b342.md",
-          "sub": []
-        },
-        {
-          "title": "eosio.msig.hpp",
-          "link": "/eosio_8msig_8hpp.md"
-        },
-        {
-          "title": "src/",
-          "link": "/dir_d61952cdef3656aaa111ea562667a411.md",
-          "sub": []
-        },
-        {
-          "title": "eosio.msig.cpp",
-          "link": "/eosio_8msig_8cpp.md"
-        },
-        {
-          "title": "eosio.system/",
-          "link": "/dir_ceff0ebc2802ac8db5ae051fd1e5ae23.md",
-          "sub": []
-        },
-        {
-          "title": "include/",
-          "link": "/dir_b41847bec886b7581aa3424298e61e25.md",
-          "sub": []
-        },
-        {
-          "title": "eosio.system/",
-          "link": "/dir_00bcd4630e73f3472c04e06e55fa27bc.md",
-          "sub": []
-        },
-        {
-          "title": "eosio.system.hpp",
-          "link": "/eosio_8system_8hpp.md"
-        },
-        {
-          "title": "exchange_state.hpp",
-          "link": "/exchange__state_8hpp.md"
-        },
-        {
-          "title": "native.hpp",
-          "link": "/native_8hpp.md"
-        },
-        {
-          "title": "rex.results.hpp",
-          "link": "/rex_8results_8hpp.md"
-        },
-        {
-          "title": "src/",
-          "link": "/dir_0d1ef186e463915f150ccad4939303ca.md",
-          "sub": []
-        },
-        {
-          "title": "delegate_bandwidth.cpp",
-          "link": "/delegate__bandwidth_8cpp.md"
-        },
-        {
-          "title": "eosio.system.cpp",
-          "link": "/eosio_8system_8cpp.md"
-        },
-        {
-          "title": "exchange_state.cpp",
-          "link": "/exchange__state_8cpp.md"
-        },
-        {
-          "title": "producer_pay.cpp",
-          "link": "/producer__pay_8cpp.md"
-        },
-        {
-          "title": "rex.cpp",
-          "link": "/rex_8cpp.md"
-        },
-        {
-          "title": "rex.results.cpp",
-          "link": "/rex_8results_8cpp.md"
-        },
-        {
-          "title": "voting.cpp",
-          "link": "/voting_8cpp.md"
-        },
-        {
-          "title": "eosio.token/",
-          "link": "/dir_4b1ec615693f9d2fe7058e0e5ef92f05.md",
-          "sub": []
-        },
-        {
-          "title": "include/",
-          "link": "/dir_996aab64b9acb287e782fb01d31f11fd.md",
-          "sub": []
-        },
-        {
-          "title": "eosio.token/",
-          "link": "/dir_f8f4b6e6315e96d1846c2cd4d5f6c66f.md",
-          "sub": []
-        },
-        {
-          "title": "eosio.token.hpp",
-          "link": "/eosio_8token_8hpp.md"
-        },
-        {
-          "title": "src/",
-          "link": "/dir_0ae1efe47db06415bbaa6478eb3a6c1a.md",
-          "sub": []
-        },
-        {
-          "title": "eosio.token.cpp",
-          "link": "/eosio_8token_8cpp.md"
-        },
-        {
-          "title": "eosio.wrap/",
-          "link": "/dir_fed4f63480d652665f2f8093648f8cdc.md",
-          "sub": []
-        },
-        {
-          "title": "include/",
-          "link": "/dir_92325049986279a92a1055cdc841c5d8.md",
-          "sub": []
-        },
-        {
-          "title": "eosio.wrap/",
-          "link": "/dir_c0b3a2a1db09861a1f276e2678af7381.md",
-          "sub": []
-        },
-        {
-          "title": "eosio.wrap.hpp",
-          "link": "/eosio_8wrap_8hpp.md"
-        },
-        {
-          "title": "src/",
-          "link": "/dir_c3f6b47acd86deb7ee5a0236dc72505c.md",
-          "sub": []
-        },
-        {
-          "title": "eosio.wrap.cpp",
-          "link": "/eosio_8wrap_8cpp.md"
+          "sub": [
+            {
+              "title": "eosio.bios/",
+              "link": "/dir_e76b55871a3ceedcbe1f9359e5753575.md",
+              "sub": [
+                {
+                  "title": "include/",
+                  "link": "/dir_d3b48ed0b02c3a9d5a9cfb905f050749.md",
+                  "sub": [
+                    {
+                      "title": "eosio.bios/",
+                      "link": "/dir_b6a109972e8c62914608cd362cb26735.md",
+                      "sub": [
+                        {
+                          "title": "eosio.bios.hpp",
+                          "link": "/eosio_8bios_8hpp.md"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "src/",
+                  "link": "/dir_9c07e9615a62ba2630f38c049fd00b2f.md",
+                  "sub": [
+                    {
+                      "title": "eosio.bios.cpp",
+                      "link": "/eosio_8bios_8cpp.md"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "eosio.msig/",
+              "link": "/dir_67cc96a10ad9fb5764f9d7b1a4bddccd.md",
+              "sub": [
+                {
+                  "title": "include/",
+                  "link": "/dir_b9b8d5c43496e6cb995f91e4d51bbf8e.md",
+                  "sub": [
+                    {
+                      "title": "eosio.msig/",
+                      "link": "/dir_488b55ee394912b442d60ddf6ba9b342.md",
+                      "sub": [
+                        {
+                          "title": "eosio.msig.hpp",
+                          "link": "/eosio_8msig_8hpp.md"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "src/",
+                  "link": "/dir_d61952cdef3656aaa111ea562667a411.md",
+                  "sub": [
+                    {
+                      "title": "eosio.msig.cpp",
+                      "link": "/eosio_8msig_8cpp.md"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "eosio.system/",
+              "link": "/dir_ceff0ebc2802ac8db5ae051fd1e5ae23.md",
+              "sub": [
+                {
+                  "title": "include/",
+                  "link": "/dir_b41847bec886b7581aa3424298e61e25.md",
+                  "sub": [
+                    {
+                      "title": "eosio.system/",
+                      "link": "/dir_00bcd4630e73f3472c04e06e55fa27bc.md",
+                      "sub": [
+                        {
+                          "title": "eosio.system.hpp",
+                          "link": "/eosio_8system_8hpp.md"
+                        },
+                        {
+                          "title": "exchange_state.hpp",
+                          "link": "/exchange__state_8hpp.md"
+                        },
+                        {
+                          "title": "native.hpp",
+                          "link": "/native_8hpp.md"
+                        },
+                        {
+                          "title": "rex.results.hpp",
+                          "link": "/rex_8results_8hpp.md"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "src/",
+                  "link": "/dir_0d1ef186e463915f150ccad4939303ca.md",
+                  "sub": [
+                    {
+                      "title": "delegate_bandwidth.cpp",
+                      "link": "/delegate__bandwidth_8cpp.md"
+                    },
+                    {
+                      "title": "eosio.system.cpp",
+                      "link": "/eosio_8system_8cpp.md"
+                    },
+                    {
+                      "title": "exchange_state.cpp",
+                      "link": "/exchange__state_8cpp.md"
+                    },
+                    {
+                      "title": "producer_pay.cpp",
+                      "link": "/producer__pay_8cpp.md"
+                    },
+                    {
+                      "title": "rex.cpp",
+                      "link": "/rex_8cpp.md"
+                    },
+                    {
+                      "title": "rex.results.cpp",
+                      "link": "/rex_8results_8cpp.md"
+                    },
+                    {
+                      "title": "voting.cpp",
+                      "link": "/voting_8cpp.md"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "eosio.token/",
+              "link": "/dir_4b1ec615693f9d2fe7058e0e5ef92f05.md",
+              "sub": [
+                {
+                  "title": "include/",
+                  "link": "/dir_996aab64b9acb287e782fb01d31f11fd.md",
+                  "sub": [
+                    {
+                      "title": "eosio.token/",
+                      "link": "/dir_f8f4b6e6315e96d1846c2cd4d5f6c66f.md",
+                      "sub": [
+                        {
+                          "title": "eosio.token.hpp",
+                          "link": "/eosio_8token_8hpp.md"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "src/",
+                  "link": "/dir_0ae1efe47db06415bbaa6478eb3a6c1a.md",
+                  "sub": [
+                    {
+                      "title": "eosio.token.cpp",
+                      "link": "/eosio_8token_8cpp.md"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "eosio.wrap/",
+              "link": "/dir_fed4f63480d652665f2f8093648f8cdc.md",
+              "sub": [
+                {
+                  "title": "include/",
+                  "link": "/dir_92325049986279a92a1055cdc841c5d8.md",
+                  "sub": [
+                    {
+                      "title": "eosio.wrap/",
+                      "link": "/dir_c0b3a2a1db09861a1f276e2678af7381.md",
+                      "sub": [
+                        {
+                          "title": "eosio.wrap.hpp",
+                          "link": "/eosio_8wrap_8hpp.md"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "src/",
+                  "link": "/dir_c3f6b47acd86deb7ee5a0236dc72505c.md",
+                  "sub": [
+                    {
+                      "title": "eosio.wrap.cpp",
+                      "link": "/eosio_8wrap_8cpp.md"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }

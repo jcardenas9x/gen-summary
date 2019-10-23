@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.navigate = exports.recursiveNavigate = void 0;
+exports.recursiveNavigate = void 0;
 
 var _constants = require("../constants");
 
@@ -69,7 +69,21 @@ const createSummaryItem = (node, subs) => {
   return item;
 };
 
-const subAdd = (node, subArray) => {};
+const subAdd = (node, subArray) => {
+  let label = node.children.filter(child => child.type === PARAGRAPH_TYPE);
+  let subs = node.children.filter(child => child.type === LIST_TYPE);
+  let item = createSummaryItem(label[0].children[0], subs);
+
+  if (item.sub) {
+    let subList = subs[0].children.slice(0);
+
+    for (let j = 0; j < subList.length; j++) {
+      subAdd(subList[j], item.sub);
+    }
+  }
+
+  subArray.push(item);
+};
 
 const recursiveNavigate = function recursiveNavigate(list) {
   let initializedOutput = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
@@ -82,49 +96,22 @@ const recursiveNavigate = function recursiveNavigate(list) {
     let label = node.children.filter(child => child.type === PARAGRAPH_TYPE);
     let subs = node.children.filter(child => child.type === LIST_TYPE);
     let item = createSummaryItem(label[0].children[0], subs);
-    console.log(item);
 
     if (item.sub) {
-      console.log(subs[0].children);
+      /**
+       * Please add in the children of the list type node
+       */
+      let subList = subs[0].children.slice(0);
+
+      for (let j = 0; j < subList.length; j++) {
+        subAdd(subList[j], item.sub);
+      }
     }
+
+    initializedOutput.array.push(item);
   }
+
+  return initializedOutput;
 };
 
 exports.recursiveNavigate = recursiveNavigate;
-
-const navigate = tree => {
-  let rootListNodePosition = {};
-  let summary = initializeSummary();
-  let workingIndex = 0;
-  let workingParent = null;
-  let siblings = [];
-  (0, _unistUtilVisit.default)((0, _unistUtilParents.default)(tree), (node, index, parent) => {
-    if (node.type === LIST_TYPE && parent && parent.type === ROOT_TYPE) {
-      rootListNodePosition = Object.assign({}, node.position);
-    }
-
-    if (node.type === LIST_ITEM_TYPE) {
-      let label = node.children.filter(child => child.type === PARAGRAPH_TYPE);
-      let subs = node.children.filter(child => child.type === LIST_TYPE);
-
-      if (nodesAreSamePosition(parent, rootListNodePosition)) {
-        workingIndex = index;
-        workingParent = Object.assign({}, node);
-        let item = createSummaryItem(label[0].children[0], subs);
-        summary["array"].push(item);
-      }
-
-      if (!nodesAreSamePosition(parent, rootListNodePosition)) {
-        let item = createSummaryItem(label[0].children[0], subs);
-        siblings = parent.children;
-
-        if (summary["array"][workingIndex].sub) {
-          summary["array"][workingIndex].sub.push(item);
-        }
-      }
-    }
-  });
-  return summary;
-};
-
-exports.navigate = navigate;

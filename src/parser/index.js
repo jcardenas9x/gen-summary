@@ -79,7 +79,7 @@ class MdastParser {
 
   parseMdastAlt (mdast) {
     let list = mdast.children.filter(child => child.type === CONSTANTS.LIST_TYPE);
-    recursiveNavigate(list[0].children);
+    return recursiveNavigate(list[0].children);
   }
 
 }

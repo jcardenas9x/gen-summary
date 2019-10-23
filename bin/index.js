@@ -77,8 +77,7 @@ _commander.default.command('generate <path> [src]').alias('gen').description('Ge
 
     if (data.actualList && data.actualList.length > 0) {
       const tree = data.mdast;
-      Parser.parseMdastAlt(tree);
-      const summary = JSON.stringify(Parser.parseMdast(tree), null, 2);
+      const summary = JSON.stringify(Parser.parseMdastAlt(tree), null, 2);
 
       if (outJson) {
         if (sourceParser) {
@@ -94,6 +93,8 @@ _commander.default.command('generate <path> [src]').alias('gen').description('Ge
 
         _textCliHelper.default.parseOutSuccess();
       } else {
+        console.log(summary);
+
         _textCliHelper.default.parseSuccess();
 
         return summary;

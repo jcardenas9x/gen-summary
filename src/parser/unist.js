@@ -53,7 +53,18 @@ const createSummaryItem = (node, subs) => {
 }
 
 const subAdd = (node, subArray) => {
-  
+  let label = node.children.filter(child => child.type === PARAGRAPH_TYPE);
+  let subs = node.children.filter(child => child.type === LIST_TYPE);
+  let item = createSummaryItem(label[0].children[0], subs);
+
+  if (item.sub) {
+    let subList = subs[0].children.slice(0);
+    for (let j = 0; j < subList.length; j++) {
+      subAdd(subList[j], item.sub);
+    }
+  }
+
+  subArray.push(item);
 }
 
 export const recursiveNavigate = (
@@ -65,47 +76,19 @@ export const recursiveNavigate = (
     let label = node.children.filter(child => child.type === PARAGRAPH_TYPE);
     let subs = node.children.filter(child => child.type === LIST_TYPE);
     let item = createSummaryItem(label[0].children[0], subs);
-    console.log(item);
 
     if (item.sub) {
-      console.log(subs[0].children);
+      /**
+       * Please add in the children of the list type node
+       */
+      let subList = subs[0].children.slice(0);
+      for (let j = 0; j < subList.length; j++) {
+        subAdd(subList[j], item.sub);
+      }
     }
+
+    initializedOutput.array.push(item);
   }
-}
 
-export const navigate = (tree) => {
-  let rootListNodePosition = {};
-  let summary = initializeSummary();
-  let workingIndex = 0;
-  let workingParent = null;
-  let siblings = [];
-  
-  visit(parents(tree), (node, index, parent) => {
-    if (node.type === LIST_TYPE && parent && parent.type === ROOT_TYPE) {
-      rootListNodePosition = Object.assign({}, node.position);
-    }
-
-    if (node.type === LIST_ITEM_TYPE) {        
-      let label = node.children.filter(child => child.type === PARAGRAPH_TYPE);
-      let subs = node.children.filter(child => child.type === LIST_TYPE);
-
-      if (nodesAreSamePosition(parent, rootListNodePosition)) {
-        workingIndex = index;
-        workingParent = Object.assign({}, node);
-        let item = createSummaryItem(label[0].children[0], subs);
-        summary["array"].push(item);
-      }
-
-      if (!nodesAreSamePosition(parent, rootListNodePosition)) {
-        let item = createSummaryItem(label[0].children[0], subs);
-        siblings = parent.children;
-
-        if (summary["array"][workingIndex].sub) {
-          summary["array"][workingIndex].sub.push(item);
-        }
-      }
-    }
-  });
-
-  return summary;
+  return initializedOutput;
 }

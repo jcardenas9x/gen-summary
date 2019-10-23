@@ -61,8 +61,6 @@ Available Arguments:
 
 #### `generate` - Generate SUMMARY.json or SUMMARY dictionary
 
-**PS:** Not fully functional right now. The resulting `SUMMARY.json` file is not fully correct.
-
 ```bash
 gensum generate [options] <path> [src]
 ```
