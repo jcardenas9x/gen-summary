@@ -77,6 +77,7 @@ _commander.default.command('generate <path> [src]').alias('gen').description('Ge
 
     if (data.actualList && data.actualList.length > 0) {
       const tree = data.mdast;
+      Parser.parseMdastAlt(tree);
       const summary = JSON.stringify(Parser.parseMdast(tree), null, 2);
 
       if (outJson) {

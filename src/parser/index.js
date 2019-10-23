@@ -2,10 +2,11 @@ import fs from 'fs-extra';
 import path from 'path';
 
 import { ProblematicFileError, MarkdownASTError, InternalError } from '../errors';
+import { CONSTANTS } from '../constants';
 import {
   deconstructMDAST, verifySummaryMDAST, verifySummaryMD
 } from './utils';
-import { navigate } from './unist';
+import { navigate, recursiveNavigate } from './unist';
 import returnMDAST from '../mdast';
 
 class MdastParser {
@@ -74,6 +75,11 @@ class MdastParser {
 
   parseMdast (mdast) {
     return navigate(mdast);
+  }
+
+  parseMdastAlt (mdast) {
+    let list = mdast.children.filter(child => child.type === CONSTANTS.LIST_TYPE);
+    recursiveNavigate(list[0].children);
   }
 
 }

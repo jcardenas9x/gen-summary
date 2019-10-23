@@ -11,6 +11,8 @@ var _path = _interopRequireDefault(require("path"));
 
 var _errors = require("../errors");
 
+var _constants = require("../constants");
+
 var _utils = require("./utils");
 
 var _unist = require("./unist");
@@ -86,6 +88,11 @@ class MdastParser {
 
   parseMdast(mdast) {
     return (0, _unist.navigate)(mdast);
+  }
+
+  parseMdastAlt(mdast) {
+    let list = mdast.children.filter(child => child.type === _constants.CONSTANTS.LIST_TYPE);
+    (0, _unist.recursiveNavigate)(list[0].children);
   }
 
 }

@@ -26,6 +26,7 @@
     "lodash": "^4.17.15",
     "remark-parse": "^7.0.1",
     "unified": "^8.4.1",
+    "unist-util-parents": "^1.0.2",
     "unist-util-visit": "^2.0.0"
   },
   "devDependencies": {

@@ -3,13 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.navigate = void 0;
+exports.navigate = exports.recursiveNavigate = void 0;
 
 var _constants = require("../constants");
 
 var _lodash = _interopRequireDefault(require("lodash"));
 
 var _unistUtilVisit = _interopRequireDefault(require("unist-util-visit"));
+
+var _unistUtilParents = _interopRequireDefault(require("unist-util-parents"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26,6 +28,8 @@ const initializeSummary = () => Object.assign({}, {
   "array": [],
   "title": ""
 });
+
+const deserialize = object => JSON.stringify(object, null, 4);
 
 const nodesAreSamePosition = (parent, rootPos) => {
   if (_lodash.default.isEqual(parent.position.start, rootPos.start) && _lodash.default.isEqual(parent.position.end, rootPos.end)) {
@@ -65,12 +69,36 @@ const createSummaryItem = (node, subs) => {
   return item;
 };
 
+const subAdd = (node, subArray) => {};
+
+const recursiveNavigate = function recursiveNavigate(list) {
+  let initializedOutput = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+    "array": [],
+    "title": ""
+  };
+
+  for (let i = 0; i < list.length; i++) {
+    let node = list[i];
+    let label = node.children.filter(child => child.type === PARAGRAPH_TYPE);
+    let subs = node.children.filter(child => child.type === LIST_TYPE);
+    let item = createSummaryItem(label[0].children[0], subs);
+    console.log(item);
+
+    if (item.sub) {
+      console.log(subs[0].children);
+    }
+  }
+};
+
+exports.recursiveNavigate = recursiveNavigate;
+
 const navigate = tree => {
   let rootListNodePosition = {};
-  let subIndexNodePosition = {};
   let summary = initializeSummary();
   let workingIndex = 0;
-  (0, _unistUtilVisit.default)(tree, (node, index, parent) => {
+  let workingParent = null;
+  let siblings = [];
+  (0, _unistUtilVisit.default)((0, _unistUtilParents.default)(tree), (node, index, parent) => {
     if (node.type === LIST_TYPE && parent && parent.type === ROOT_TYPE) {
       rootListNodePosition = Object.assign({}, node.position);
     }
@@ -81,19 +109,16 @@ const navigate = tree => {
 
       if (nodesAreSamePosition(parent, rootListNodePosition)) {
         workingIndex = index;
+        workingParent = Object.assign({}, node);
         let item = createSummaryItem(label[0].children[0], subs);
         summary["array"].push(item);
       }
 
-      console.log("Current working depthIndex: ".concat(workingIndex, " w/ listItem node index ").concat(index, " w/ ").concat(node.children.length, " children"));
-
       if (!nodesAreSamePosition(parent, rootListNodePosition)) {
         let item = createSummaryItem(label[0].children[0], subs);
+        siblings = parent.children;
 
-        if (item.sub) {
-          subIndexNodePosition = Object.assign({}, node.position);
-          console.log(subIndexNodePosition);
-        } else {
+        if (summary["array"][workingIndex].sub) {
           summary["array"][workingIndex].sub.push(item);
         }
       }

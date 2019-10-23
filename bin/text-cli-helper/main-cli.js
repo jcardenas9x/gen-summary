@@ -25,6 +25,7 @@ const generateHelpText = () => {
   console.log('  $ gensum gen -j summary.md');
   console.log('  $ gensum generate summary.md /Users/jonathan.cardenas/gen-summary/sample');
   console.log('  $ gensum generate -a /Users/jonathan.cardenas/gen-summary/sample/summary.md');
+  console.log('  $ gensum generate -a -j /Users/jonathan.cardenas/gen-summary/sample/summary.md');
   console.log('');
 };
 

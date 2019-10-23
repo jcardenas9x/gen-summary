@@ -1,6 +1,7 @@
 import { CONSTANTS } from '../constants';
 import _ from 'lodash';
 import visit from 'unist-util-visit';
+import parents from 'unist-util-parents';
 
 const {
   ROOT_TYPE,
@@ -15,6 +16,8 @@ const initializeSummary = () => Object.assign({}, {
   "array": [],
   "title": ""
 });
+
+const deserialize = (object) => JSON.stringify(object, null, 4);
 
 const nodesAreSamePosition = (parent, rootPos) => {
   if (
@@ -49,13 +52,35 @@ const createSummaryItem = (node, subs) => {
   return item;
 }
 
+const subAdd = (node, subArray) => {
+  
+}
+
+export const recursiveNavigate = (
+  list, 
+  initializedOutput = {"array": [], "title": ""}
+) => {
+  for (let i = 0; i < list.length; i++) {
+    let node = list[i];
+    let label = node.children.filter(child => child.type === PARAGRAPH_TYPE);
+    let subs = node.children.filter(child => child.type === LIST_TYPE);
+    let item = createSummaryItem(label[0].children[0], subs);
+    console.log(item);
+
+    if (item.sub) {
+      console.log(subs[0].children);
+    }
+  }
+}
+
 export const navigate = (tree) => {
   let rootListNodePosition = {};
-  let subIndexNodePosition = {};
   let summary = initializeSummary();
   let workingIndex = 0;
-
-  visit(tree, (node, index, parent) => {
+  let workingParent = null;
+  let siblings = [];
+  
+  visit(parents(tree), (node, index, parent) => {
     if (node.type === LIST_TYPE && parent && parent.type === ROOT_TYPE) {
       rootListNodePosition = Object.assign({}, node.position);
     }
@@ -66,23 +91,21 @@ export const navigate = (tree) => {
 
       if (nodesAreSamePosition(parent, rootListNodePosition)) {
         workingIndex = index;
-        let item = createSummaryItem(label[0].children[0], subs)
+        workingParent = Object.assign({}, node);
+        let item = createSummaryItem(label[0].children[0], subs);
         summary["array"].push(item);
       }
-      console.log(
-        `Current working depthIndex: ${workingIndex} w/ listItem node index ${index} w/ ${node.children.length} children`
-      );
+
       if (!nodesAreSamePosition(parent, rootListNodePosition)) {
         let item = createSummaryItem(label[0].children[0], subs);
-        if (item.sub) {
-          subIndexNodePosition = Object.assign({}, node.position);
-          console.log(subIndexNodePosition);
-        } else {
+        siblings = parent.children;
+
+        if (summary["array"][workingIndex].sub) {
           summary["array"][workingIndex].sub.push(item);
         }
       }
     }
-  })
+  });
 
   return summary;
 }
