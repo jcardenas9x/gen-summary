@@ -1,33 +1,13 @@
 import { CONSTANTS } from '../constants';
 import _ from 'lodash';
-import visit from 'unist-util-visit';
-import parents from 'unist-util-parents';
 
 const {
-  ROOT_TYPE,
   LIST_TYPE,
-  LIST_ITEM_TYPE,
   LINK_TYPE,
-  TEXT_TYPE,
   PARAGRAPH_TYPE
 } = CONSTANTS
 
-const initializeSummary = () => Object.assign({}, {
-  "array": [],
-  "title": ""
-});
-
 const deserialize = (object) => JSON.stringify(object, null, 4);
-
-const nodesAreSamePosition = (parent, rootPos) => {
-  if (
-    _.isEqual(parent.position.start, rootPos.start) &&
-    _.isEqual(parent.position.end, rootPos.end)
-  ) {
-    return true;
-  }
-  return false;
-}
 
 const parseTextNode = (node) => {
   let item = {"title": ""};
