@@ -11,7 +11,7 @@ const deserialize = (object) => JSON.stringify(object, null, 4);
 
 const parseTextNode = (node) => {
   let item = {"title": ""};
-  item["title"] = node.children.map(node => node.value).join('');
+  item["title"] = node.value;
   return item;
 }
 

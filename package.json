@@ -6,7 +6,8 @@
   "scripts": {
     "compile": "./node_modules/.bin/babel src --out-dir bin",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run compile && npm link"
+    "build": "npm run compile && npm link",
+    "postinstall": "npm run compile"
   },
   "bin": {
     "gensum": "./bin/index.js"
